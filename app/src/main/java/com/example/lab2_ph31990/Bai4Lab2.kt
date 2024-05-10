@@ -66,7 +66,7 @@ fun main() {
     val scanner = Scanner(System.`in`)
     val quanLySV = QuanLySinhVien()
 
-    var luaChon: Int
+    var choose: Int
     do {
         println("----- MENU -----")
         println("1. Thêm sinh viên")
@@ -76,9 +76,9 @@ fun main() {
         print("Nhập lựa chọn của bạn: ")
 
         try {
-            luaChon = scanner.nextInt()
+            choose = scanner.nextInt()
             scanner.nextLine()
-            when (luaChon) {
+            when (choose) {
                 1 -> quanLySV.addSinhVien()
                 2 -> {
                     println("----- Xóa sinh viên -----")
@@ -100,9 +100,9 @@ fun main() {
         } catch (e: InputMismatchException) {
             println("Lỗi: Vui lòng nhập đúng định dạng cho lựa chọn.")
             scanner.nextLine()
-            luaChon = -1
+            choose = -1
         }
-    } while (luaChon != 0)
+    } while (choose != 0)
 
     scanner.close()
 }
