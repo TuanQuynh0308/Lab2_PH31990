@@ -41,7 +41,7 @@ class QuanLySinhVien {
             danhSachSinhVien.remove(sinhVien)
             println("Xóa sinh viên thành công: $mssv")
         } else {
-            println("Không tìm thấy sinh viên có MSSV: $mssv")
+            println("Không tìm thấy MSSV: $mssv")
         }
     }
 
@@ -73,7 +73,7 @@ fun main() {
         println("2. Xóa sinh viên")
         println("3. Xem danh sách sinh viên")
         println("0. Thoát")
-        print("Nhập lựa chọn của bạn: ")
+        print("Nhập lựa chọn: ")
 
         try {
             choose = scanner.nextInt()
@@ -82,7 +82,7 @@ fun main() {
                 1 -> quanLySV.addSinhVien()
                 2 -> {
                     println("----- Xóa sinh viên -----")
-                    print("Nhập MSSV của sinh viên cần xóa: ")
+                    print("Nhập MSSV cần xóa: ")
                     val mssv = scanner.nextLine()
                     quanLySV.deleteSinhVien(mssv)
                 }
@@ -94,11 +94,11 @@ fun main() {
                     println("Thoát chương trình.")
                 }
                 else -> {
-                    println("Lựa chọn không hợp lệ. Vui lòng chọn lại.")
+                    println("Vui loòng nhạp laại")
                 }
             }
         } catch (e: InputMismatchException) {
-            println("Lỗi: Vui lòng nhập đúng định dạng cho lựa chọn.")
+            println("Nhập lại:")
             scanner.nextLine()
             choose = -1
         }
